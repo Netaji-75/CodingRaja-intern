@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="icon" type="image/png" href="favorite.png">
+</head>
+<body style="background-color: antiquewhite;">
+
+    <header style="display: flex; justify-content: space-between;">
+        <div class="header-content">
+            <nav>
+                <a href="mp.html" target="_self" style=" background-color: white;border-top: 10px; border-radius: 10px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                        <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
+                    </svg>
+                </a>
+            </nav>
+        </div>
+    </header>
+    <div>
+        <section class="LogIn">
+            <h2>Log In</h2>
+            <form id="login-form">
+                <div>
+                    <label for="email">User Email</label>
+                    <input type="email" id="email">
+                    <span class="error-message" id="email-error"></span>
+                </div>
+                <div>
+                    <label for="username">Username</label>
+                    <input type="text" id="username">
+                    <span class="error-message" id="username-error"></span>
+                </div>
+                <div>
+                    <label for="password">Password</label>
+                    <input type="password" id="password">
+                    <span class="error-message" id="password-error"></span>
+                </div>
+                <div>
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password">
+                    <span class="error-message" id="confirm-password-error"></span>
+                </div>
+                <div class="btn">
+                    <button type="submit">Log In</button>
+                </div>
+            </form>
+        </section>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginForm = document.getElementById('login-form');
+            const emailInput = document.getElementById('email');
+            const usernameInput = document.getElementById('username');
+            const passwordInput = document.getElementById('password');
+            const confirmPasswordInput = document.getElementById('confirm-password');
+
+            const emailError = document.getElementById('email-error');
+            const usernameError = document.getElementById('username-error');
+            const passwordError = document.getElementById('password-error');
+            const confirmPasswordError = document.getElementById('confirm-password-error');
+
+            loginForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                let isValid = true;
+
+                // Email validation
+                if (!validateEmail(emailInput.value)) {
+                    emailError.textContent = 'Invalid email address';
+                    isValid = false;
+                } else {
+                    emailError.textContent = '';
+                }
+
+                // Username validation
+                if (usernameInput.value.trim() === '') {
+                    usernameError.textContent = 'Username is required';
+                    isValid = false;
+                } else {
+                    usernameError.textContent = '';
+                }
+
+                // Password validation
+                if (passwordInput.value.trim() === '') {
+                    passwordError.textContent = 'Password is required';
+                    isValid = false;
+                } else {
+                    passwordError.textContent = '';
+                }
+
+                // Confirm password validation
+                if (confirmPasswordInput.value.trim() !== passwordInput.value.trim()) {
+                    confirmPasswordError.textContent = 'Passwords do not match';
+                    isValid = false;
+                } else {
+                    confirmPasswordError.textContent = '';
+                }
+
+                if (isValid) {
+                    // Submit the form or perform further actions
+                    alert('Form submitted successfully!');
+                }
+            });
+
+            // Function to validate email address
+            function validateEmail(email) {
+                const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                return re.test(email);
+            }
+        });
+    </script>
+</body>
+</html>

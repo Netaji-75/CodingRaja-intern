@@ -1,0 +1,125 @@
+body {
+   background-color: antiquewhite;
+   
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   margin: 0;
+}
+
+.container {
+   margin-top: 20px; 
+}
+
+section.signIn {
+   background: url('p1.jpg') no-repeat;
+   width: 400px;
+   height: 300px;
+   padding: 5px;
+   background-size: cover;
+   background-position: center;
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   font-size: 20px;
+   color: white;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   align-items: center;
+   border-radius: 30px;
+   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5); 
+   overflow: hidden;
+}
+
+
+section.signIn h2 {
+   margin-top: 20px;
+   margin-bottom: auto;
+   font-size: 30px;
+}
+
+section.signIn form {
+   flex-grow: 1;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   align-items: center;
+}
+
+section.signIn form div {
+   margin-bottom: 20px;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+}
+
+section.signIn form div:last-child {
+   margin-bottom: auto;
+   align-items: center;
+}
+
+section.signIn label {
+   margin-bottom: 5px;
+}
+
+section.signIn input[type="mail"],
+section.signIn input[type="password"] {
+   background: transparent;
+   border: none;
+   border-bottom: 2px solid #ffffff;
+   border-width: 1px;
+   padding: 10px 5px;
+   color: #ffffff;
+   outline: none;
+   transition: border-bottom-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+   width: 100%;
+   max-width: 500px;
+}
+
+section.signIn input[type="mail"]:hover,
+section.signIn input[type="password"]:hover {
+   border-bottom-color: #fff;
+   box-shadow: 0 2px 5px 0 rgba(255, 255, 255, 0.5);
+}
+
+section.signIn button[type="submit"] {
+   padding: 10px 20px;
+   background-color: #333;
+   color: white;
+   border-color: #ffffff ;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+}
+
+section.signIn button[type="submit"]:hover {
+   background-color: #555;
+}
+
+header {
+    text-align: left;
+    margin: 20px 0;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+section.signIn button[type="submit"] {
+   padding: 10px 20px;
+   background-color: #333;
+   color: white;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+section.signIn button[type="submit"]:hover {
+   background-color: #555;
+   transform: scale(1.05); /* Increase size on hover */
+}
